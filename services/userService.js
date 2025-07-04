@@ -1,11 +1,14 @@
-const userRepository = require("../repositories/userRepository");
+const userRepository = require("../repositories/userRepository"); //Veritabanı erişimi için repository ile iletişim kurar.
+const User = require("../entities/User"); //Kullanıcı verilerini temsil eden nesneyle çalışır
 
 class UserService {
   async getAllUsers() {
+    //Tüm kullanıcıları almak için repository’den veri çeker
     return await userRepository.getAllUsers();
   }
 
   async getUserById(id) {
+    //id ile ile belirli bir kullanıcıyı çeker.
     const user = await userRepository.getUserById(id);
     if (!user) {
       throw new Error("Kullanıcı bulunamadı");
@@ -14,7 +17,7 @@ class UserService {
   }
 
   async createUser(name, email) {
-    return await userRepository.createUser(name, email);
+    return await userRepository.createUser(name, email); //userRepository.createUser(name, email) metodunu çağırır ve sonucunu döndürür.
   }
 
   async updateUser(id, name, email) {
@@ -34,4 +37,4 @@ class UserService {
   }
 }
 
-module.exports = new UserService();
+module.exports = new UserService(); //UserService sınıfından bir instance oluşturur ve dışa aktarır.
