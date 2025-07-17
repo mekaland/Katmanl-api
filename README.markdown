@@ -9,7 +9,7 @@ Node.js, Express ve PostgreSQL ile katmanlı mimariye sahip bir REST API.
 - `express-validator` ile veri doğrulama.
 
 ## Gereksinimler
-- Node.js 18+
+- Node.js 
 - Docker ve Docker Compose
 - Git
 
